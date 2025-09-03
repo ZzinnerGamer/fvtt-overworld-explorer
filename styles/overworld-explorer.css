@@ -1,0 +1,17 @@
+/* Asegura que el part "content" se vea cuando su tab está activa */
+.application.journal-sheet .tab[data-group="sheet"][data-tab="content"][data-application-part="content"] {
+  display: block !important;
+  visibility: visible !important;
+  height: auto;
+}
+
+/* ProseMirror necesita altura */
+prose-mirror.editor.prosemirror .editor-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+prose-mirror.editor.prosemirror .editor-content {
+  position: absolute;
+  overflow: auto;
+}

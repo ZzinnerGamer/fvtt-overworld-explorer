@@ -1,0 +1,120 @@
+{{!-- modules/overworld-explorer/templates/event-page-edit.hbs --}}
+<section class="tab standard-form scrollable" data-tab="content" data-group="sheet" data-application-part="content">
+
+<nav class="ow-tabs tabs" data-group="ow">
+  <a class="item active" data-action="tab" data-group="ow" data-tab="read">Leer en Alto</a>
+  <a class="item" data-action="tab" data-group="ow" data-tab="desc">Descripción</a>
+  <a class="item" data-action="tab" data-group="ow" data-tab="reward">Recompensa</a>
+  <a class="item" data-action="tab" data-group="ow" data-tab="creatures">Criaturas</a>
+  <a class="item" data-action="tab" data-group="ow" data-tab="scene">Escena/Región</a>
+  <a class="item" data-action="tab" data-group="ow" data-tab="state">Estado</a>
+</nav>
+
+
+  <section class="ow-tabs-content">
+
+    <div class="tab" data-tab="read" data-group="ow">
+      <div class="form-group stacked">
+        <label>Leer en Alto</label>
+        <div class="form-fields">
+          <prose-mirror
+            name="flags.overworld-explorer.text.overview"
+            data-document-uuid="{{document.uuid}}"
+            collaborate>
+          </prose-mirror>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab" data-tab="desc" data-group="ow">
+      <div class="form-group stacked">
+        <label>Descripción</label>
+        <div class="form-fields">
+          <prose-mirror
+            name="flags.overworld-explorer.text.exposition"
+            data-document-uuid="{{document.uuid}}"
+            collaborate>
+          </prose-mirror>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab" data-tab="reward" data-group="ow">
+      <div class="form-group stacked">
+        <label>Recompensa / Resumen</label>
+        <div class="form-fields">
+          <prose-mirror
+            name="flags.overworld-explorer.text.summary"
+            data-document-uuid="{{document.uuid}}"
+            collaborate>
+          </prose-mirror>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab" data-tab="creatures" data-group="ow">
+      <fieldset data-drop="creatures">
+        <legend>Criaturas (drop desde Directorio/Compendio)</legend>
+        <div data-list="creatures">
+          {{#each ow.creatures as |c i|}}
+            <div class="form-group" data-row>
+              <label>UUID</label>
+              <div class="form-fields">
+                <input type="text" name="flags.overworld-explorer.creatures.{{i}}.uuid" value="{{c.uuid}}" placeholder="Actor/Compendium UUID">
+                <label>Cant.</label>
+                <input type="number" name="flags.overworld-explorer.creatures.{{i}}.qty" value="{{c.qty}}" min="1" step="1">
+                <button type="button" class="icon fa-solid fa-trash" data-action="remove-creature"></button>
+              </div>
+            </div>
+          {{/each}}
+          <div class="form-group">
+            <div class="form-fields">
+              <button type="button" class="icon fa-solid fa-plus" data-action="add-creature">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tab" data-tab="scene" data-group="ow">
+      <fieldset>
+        <legend>Escena / Región</legend>
+        <div class="form-group stacked" data-drop="scene">
+          <label>Escena vinculada</label>
+          <div class="form-fields">
+            <input type="text" name="flags.overworld-explorer.sceneUuid" value="{{ow.sceneUuid}}" placeholder="Arrastra aquí una Escena o pega su UUID">
+          </div>
+          <p class="hint">Drop de una Escena para autocompletar.</p>
+        </div>
+
+        <div class="form-group stacked">
+          <label>Regiones</label>
+          <div class="form-fields">
+            <input type="text" name="flags.overworld-explorer.enemyRegionId" value="{{ow.enemyRegionId}}" placeholder="ID/slug de Región v12 (enemigos)">
+          </div>
+          <div class="form-fields">
+            <input type="text" name="flags.overworld-explorer.allyRegionId" value="{{ow.allyRegionId}}" placeholder="ID/slug de Región v12 (aliados)">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="tab" data-tab="state" data-group="ow">
+      <div class="form-group">
+        <label>Rareza</label>
+        <div class="form-fields">
+          <select name="flags.overworld-explorer.rarity">
+            {{selectOptions rarityOptions selected=ow.rarity}}
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Completado</label>
+        <div class="form-fields">
+          <input type="checkbox" name="flags.overworld-explorer.completed" {{checked ow.completed}}>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>

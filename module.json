@@ -1,0 +1,31 @@
+{
+  "id": "overworld-explorer",
+  "title": "Overworld Explorer (Mapamundi)",
+  "description": "Exploración tipo mapamundi al estilo JRPG: biomas por regiones, encuentros aleatorios y eventos desde diarios.",
+  "version": "0.1.3",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "authors": [
+    {
+      "name": "Zinneryte"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js", "scripts/overworld-journal-sheet.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    }
+  ],
+  "styles": [ "templates/event-page-edit.hbs", "templates/event-page-view.hbs", "styles/overworld-explorer.css" ]
+}

@@ -1,0 +1,6 @@
+{
+  "WORLDMAP.Scene.FlagIsWorldMap.Label": "Escena de Mapamundi",
+  "WORLDMAP.Scene.FlagIsWorldMap.Hint": "Si está marcado, esta escena se tratará como mapamundi para exploración y eventos.",
+  "WORLDMAP.Token.FlagIsExplorer.Label": "Token explorador",
+  "WORLDMAP.Token.FlagIsExplorer.Hint": "Este token puede disparar eventos aleatorios de exploración en escenas de Mapamundi."
+}

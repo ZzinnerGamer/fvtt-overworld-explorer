@@ -1,0 +1,19 @@
+{
+  "WORLDMAP.Scene.FlagIsWorldMap.Label": "Escena de Mapamundi",
+  "WORLDMAP.Scene.FlagIsWorldMap.Hint": "Si está marcado, esta escena se tratará como mapamundi para exploración y eventos.",
+  "WORLDMAP.Token.FlagIsExplorer.Label": "Token explorador",
+  "WORLDMAP.Token.FlagIsExplorer.Hint": "Este token puede disparar eventos aleatorios de exploración en escenas de Mapamundi.",  
+  "WORLDMAP.Journal.EventPage": "Evento de Mapamundi",
+  "WORLDMAP.Journal.Fields.ReadAloud": "Leer en Alto",
+  "WORLDMAP.Journal.Fields.LongDescription": "Descripción Extensa",
+  "WORLDMAP.Journal.Fields.Creatures": "Lista de Criaturas",
+  "WORLDMAP.Journal.Fields.CreatureUUID": "UUID de Criatura/NPC/Actor",
+  "WORLDMAP.Journal.Fields.Quantity": "Cantidad",
+  "WORLDMAP.Journal.Fields.Scene": "Escena Vinculada (UUID)",
+  "WORLDMAP.Journal.Fields.RegionEnemy": "Región de Aparición de Enemigos",
+  "WORLDMAP.Journal.Fields.RegionAlly": "Región de Aparición de Enemigos",
+  "WORLDMAP.Journal.Fields.Reward": "Recompensa",
+  "WORLDMAP.Journal.Fields.Rarity": "Rareza",
+  "WORLDMAP.Journal.Fields.Completed": "Completado",
+  "WORLDMAP.Journal.Button.NewEventPage": "Nueva página de Evento (Worldmap)"
+}

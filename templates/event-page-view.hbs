@@ -1,0 +1,26 @@
+{{!-- templates/event-page-view.hbs --}}
+<article class="ow-view journal-page-content">
+  <header class="journal-page-header">
+    <h1>{{document.name}}</h1>
+  </header>
+
+  {{{worldmap.text.overview}}}<br>
+  {{{worldmap.text.exposition}}}<br>
+  {{{worldmap.text.summary}}}<br>
+
+  {{#if worldmap.sceneUuid}}<div><strong>Escena:</strong> {{worldmap.sceneUuid}}</div>{{/if}}
+  {{#if worldmap.enemyRegionId}}<div><strong>Región (enemigos):</strong> {{worldmap.enemyRegionId}}</div>{{/if}}
+  {{#if worldmap.allyRegionId}}<div><strong>Región (aliados):</strong> {{worldmap.allyRegionId}}</div>{{/if}}
+
+  {{#if worldmap.creatures.length}}
+    <div><strong>Criaturas:</strong>
+      {{#each worldmap.creatures as |c i|}}
+        <div>• {{c.qty}} × {{c.uuid}}</div>
+      {{/each}}
+    </div>
+  {{/if}}
+
+  <div><strong>Rareza:</strong> {{worldmap.rarity}}</div>
+  <div><strong>Completado:</strong> {{#if worldmap.completed}}Sí{{else}}No{{/if}}</div>
+</article>
+

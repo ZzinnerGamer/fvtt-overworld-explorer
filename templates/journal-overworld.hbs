@@ -1,0 +1,20 @@
+{{!-- templates/journal-overworld.hbs --}}
+<section class="journal ow-journal">
+  {{!-- Cabecera core (nombre, permisos, etc.) --}}
+  {{> "templates/journal/parts/page-header.html"}}
+
+  {{!-- TOC core (lista de páginas) --}}
+  {{> "templates/journal/journal-page-toc.html"}}
+
+  {{!-- Render de páginas (core ya gestiona cuál se ve) --}}
+  <section class="journal-pages">
+    {{#each pages}}
+      <div class="journal-page" data-page-id="{{this.id}}">
+        {{{this.content}}}
+      </div>
+    {{/each}}
+  </section>
+
+  {{!-- Pie core --}}
+  {{> "templates/journal/parts/page-footer.html"}}
+</section>
